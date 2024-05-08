@@ -19,7 +19,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/A/${i}.png`)
+      uriList.push(`https://nft2.blex.io/A/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -32,7 +32,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/B/${i}.png`)
+      uriList.push(`https://nft2.blex.io/B/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -45,7 +45,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/C/${i}.png`)
+      uriList.push(`https://nft2.blex.io/C/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -58,7 +58,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/D/${i}.png`)
+      uriList.push(`https://nft2.blex.io/D/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -71,7 +71,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/E/${i}.png`)
+      uriList.push(`https://nft2.blex.io/E/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -86,7 +86,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 10;i <= 14;i++) {
-      uriList.push(`https://nft1.blex.io/F/${i}.png`)
+      uriList.push(`https://nft2.blex.io/F/${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -114,7 +114,7 @@ async function main() {
     ];
     const uriList: string[] = []
     for (let i = 1;i <= 9;i++) {
-      uriList.push(`https://nft2.blex.io/A/0${i}.png`)
+      uriList.push(`https://nft1.blex.io/A/0${i}.png`)
     }
     await mint(addressList,uriList)
   }
@@ -130,7 +130,7 @@ async function main() {
     ]
     const uriList: string[] = []
     for (let i = 1;i <= 4;i++) {
-      uriList.push(`https://nft2.blex.io/B/0${i}.png`)
+      uriList.push(`https://nft1.blex.io/B/0${i}.png`)
     }
     await mint(addressList,uriList)
   }
