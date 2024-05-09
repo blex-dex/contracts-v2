@@ -80,7 +80,7 @@ const config: HardhatUserConfig = {
       accounts: [process.env.PRIVATE_KEY as string],
       verify: {
         etherscan: {
-          apiUrl: "https://api.arbiscan.io/api",
+          apiUrl: "https://api.arbiscan.io",
           apiKey: process.env.ARBISCAN_API_KEY_BASE,
         }
       }
