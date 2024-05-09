@@ -11,11 +11,17 @@ import "hardhat-deploy";
 import "hardhat-deploy-ethers";
 import "hardhat-deploy-tenderly";
 
-import { node_url, accounts, addForkConfiguration } from "./utils/network";
+import { node_url,accounts,addForkConfiguration } from "./utils/network";
 
 const config: HardhatUserConfig = {
   typechain: {
     externalArtifacts: ["deployments/localhost/MarketDiamond.json"]
+  },
+  namedAccounts: {
+    deployer: 0,
+    simpleERC20Beneficiary: 11,
+    diamondAdmin: 0,
+    accessManagerAdmin: 0,
   },
   solidity: {
     compilers: [
@@ -41,12 +47,6 @@ const config: HardhatUserConfig = {
       }
     ]
   },
-  namedAccounts: {
-    deployer: 10,
-    simpleERC20Beneficiary: 11,
-    diamondAdmin: 10,
-    accessManagerAdmin: 10
-  },
   networks: addForkConfiguration({
     hardhat: {
       initialBaseFeePerGas: 0 // to fix : https://github.com/sc-forks/solidity-coverage/issues/652, see https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136
@@ -57,21 +57,31 @@ const config: HardhatUserConfig = {
     },
     fantom_test: {
       url: node_url("fantom_test"),
-      accounts: accounts(),
+      accounts: [process.env.PK_TEST as string],
       verify: {
         etherscan: {
+          apiUrl: "https://api-testnet.ftmscan.com",
           apiKey: process.env.ETHERSCAN_API_KEY_FANTOM,
-          apiUrl: "https://api-testnet.ftmscan.com"
         }
       }
     },
     base_sepolia: {
       url: node_url("base_sepolia"),
-      accounts: accounts(),
+      accounts: [process.env.PK_TEST as string],
       verify: {
         etherscan: {
           apiUrl: "https://api-sepolia.basescan.org",
-          apiKey: process.env.ETHERSCAN_API_KEY_BASE
+          apiKey: process.env.ETHERSCAN_API_KEY_BASE,
+        }
+      }
+    },
+    arbitrum_one: {
+      url: node_url("arbitrum_one"),
+      accounts: [process.env.PRIVATE_KEY as string],
+      verify: {
+        etherscan: {
+          apiUrl: "https://api.arbiscan.io",
+          apiKey: process.env.ARBISCAN_API_KEY_BASE,
         }
       }
     },
@@ -115,13 +125,13 @@ const config: HardhatUserConfig = {
   },
   external: process.env.HARDHAT_FORK
     ? {
-        deployments: {
-          // process.env.HARDHAT_FORK will specify the network that the fork is made from.
-          // these lines allow it to fetch the deployments from the network being forked from both for node and deploy task
-          hardhat: ["deployments/" + process.env.HARDHAT_FORK],
-          localhost: ["deployments/" + process.env.HARDHAT_FORK]
-        }
+      deployments: {
+        // process.env.HARDHAT_FORK will specify the network that the fork is made from.
+        // these lines allow it to fetch the deployments from the network being forked from both for node and deploy task
+        hardhat: ["deployments/" + process.env.HARDHAT_FORK],
+        localhost: ["deployments/" + process.env.HARDHAT_FORK]
       }
+    }
     : undefined,
 
   tenderly: {

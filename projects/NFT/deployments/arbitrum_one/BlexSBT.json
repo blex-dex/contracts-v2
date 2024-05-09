@@ -1,5 +1,5 @@
 {
-  "address": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
+  "address": "0xC1768f7edcb78E8a25C89e826873321Cc2627C6D",
   "abi": [
     {
       "anonymous": false,
@@ -124,225 +124,28 @@
       "type": "receive"
     },
     {
+      "anonymous": false,
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        }
-      ],
-      "name": "AccessManagerAlreadyScheduled",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "AccessManagerBadConfirmation",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        }
-      ],
-      "name": "AccessManagerExpired",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
+          "indexed": true,
           "internalType": "address",
-          "name": "initialAdmin",
-          "type": "address"
-        }
-      ],
-      "name": "AccessManagerInvalidInitialAdmin",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "AccessManagerLockedAccount",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "AccessManagerLockedRole",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        }
-      ],
-      "name": "AccessManagerNotReady",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        }
-      ],
-      "name": "AccessManagerNotScheduled",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "msgsender",
+          "name": "owner",
           "type": "address"
         },
         {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "AccessManagerUnauthorizedAccount",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
+          "indexed": true,
           "internalType": "address",
-          "name": "caller",
+          "name": "approved",
           "type": "address"
         },
         {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes4",
-          "name": "selector",
-          "type": "bytes4"
-        }
-      ],
-      "name": "AccessManagerUnauthorizedCall",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "msgsender",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes4",
-          "name": "selector",
-          "type": "bytes4"
-        }
-      ],
-      "name": "AccessManagerUnauthorizedCancel",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        }
-      ],
-      "name": "AccessManagerUnauthorizedConsume",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        }
-      ],
-      "name": "AddressEmptyCode",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "AddressInsufficientBalance",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "FailedInnerCall",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidInitialization",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "NotInitializing",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint8",
-          "name": "bits",
-          "type": "uint8"
-        },
-        {
+          "indexed": true,
           "internalType": "uint256",
-          "name": "value",
+          "name": "tokenId",
           "type": "uint256"
         }
       ],
-      "name": "SafeCastOverflowedUintDowncast",
-      "type": "error"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "uint64",
-          "name": "version",
-          "type": "uint64"
-        }
-      ],
-      "name": "Initialized",
+      "name": "Approval",
       "type": "event"
     },
     {
@@ -350,161 +153,24 @@
       "inputs": [
         {
           "indexed": true,
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint32",
-          "name": "nonce",
-          "type": "uint32"
-        }
-      ],
-      "name": "OperationCanceled",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint32",
-          "name": "nonce",
-          "type": "uint32"
-        }
-      ],
-      "name": "OperationExecuted",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint32",
-          "name": "nonce",
-          "type": "uint32"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint48",
-          "name": "schedule",
-          "type": "uint48"
-        },
-        {
-          "indexed": false,
           "internalType": "address",
-          "name": "caller",
+          "name": "owner",
           "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        }
-      ],
-      "name": "OperationScheduled",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "admin",
-          "type": "uint64"
-        }
-      ],
-      "name": "RoleAdminChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint32",
-          "name": "delay",
-          "type": "uint32"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint48",
-          "name": "since",
-          "type": "uint48"
-        }
-      ],
-      "name": "RoleGrantDelayChanged",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
         },
         {
           "indexed": true,
           "internalType": "address",
-          "name": "account",
+          "name": "operator",
           "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint32",
-          "name": "delay",
-          "type": "uint32"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint48",
-          "name": "since",
-          "type": "uint48"
         },
         {
           "indexed": false,
           "internalType": "bool",
-          "name": "newMember",
+          "name": "approved",
           "type": "bool"
         }
       ],
-      "name": "RoleGranted",
+      "name": "ApprovalForAll",
       "type": "event"
     },
     {
@@ -512,211 +178,78 @@
       "inputs": [
         {
           "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
         },
         {
           "indexed": true,
-          "internalType": "uint64",
-          "name": "guardian",
-          "type": "uint64"
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "RoleGuardianChanged",
+      "name": "Transfer",
       "type": "event"
     },
     {
-      "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
         {
-          "indexed": false,
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "person",
+          "type": "address"
+        }
+      ],
+      "name": "checkDegreeOfPerson",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "string",
-          "name": "label",
+          "name": "__tokenURI",
           "type": "string"
         }
       ],
-      "name": "RoleLabel",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "RoleRevoked",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint32",
-          "name": "delay",
-          "type": "uint32"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint48",
-          "name": "since",
-          "type": "uint48"
-        }
-      ],
-      "name": "TargetAdminDelayUpdated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "closed",
-          "type": "bool"
-        }
-      ],
-      "name": "TargetClosed",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "bytes4",
-          "name": "selector",
-          "type": "bytes4"
-        },
-        {
-          "indexed": true,
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "TargetFunctionRoleUpdated",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "ADMIN_ROLE",
+      "name": "claimDegree",
       "outputs": [
         {
-          "internalType": "uint64",
+          "internalType": "uint256",
           "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "PUBLIC_ROLE",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes4",
-          "name": "selector",
-          "type": "bytes4"
-        }
-      ],
-      "name": "canCall",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "immediate",
-          "type": "bool"
-        },
-        {
-          "internalType": "uint32",
-          "name": "delay",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        }
-      ],
-      "name": "cancel",
-      "outputs": [
-        {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
+          "type": "uint256"
         }
       ],
       "stateMutability": "nonpayable",
@@ -725,322 +258,33 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "consumeScheduledOp",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        }
-      ],
-      "name": "execute",
+      "name": "getApproved",
       "outputs": [
         {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "expiration",
-      "outputs": [
-        {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
           "internalType": "address",
-          "name": "account",
+          "name": "",
           "type": "address"
         }
       ],
-      "name": "getAccess",
-      "outputs": [
-        {
-          "internalType": "uint48",
-          "name": "since",
-          "type": "uint48"
-        },
-        {
-          "internalType": "uint32",
-          "name": "currentDelay",
-          "type": "uint32"
-        },
-        {
-          "internalType": "uint32",
-          "name": "pendingDelay",
-          "type": "uint32"
-        },
-        {
-          "internalType": "uint48",
-          "name": "effect",
-          "type": "uint48"
-        }
-      ],
       "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "getNonce",
-      "outputs": [
-        {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "getRoleAdmin",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "getRoleGrantDelay",
-      "outputs": [
-        {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "getRoleGuardian",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "id",
-          "type": "bytes32"
-        }
-      ],
-      "name": "getSchedule",
-      "outputs": [
-        {
-          "internalType": "uint48",
-          "name": "",
-          "type": "uint48"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        }
-      ],
-      "name": "getTargetAdminDelay",
-      "outputs": [
-        {
-          "internalType": "uint32",
-          "name": "",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
+          "internalType": "string",
+          "name": "name_",
+          "type": "string"
         },
         {
-          "internalType": "bytes4",
-          "name": "selector",
-          "type": "bytes4"
-        }
-      ],
-      "name": "getTargetFunctionRole",
-      "outputs": [
-        {
-          "internalType": "uint64",
-          "name": "",
-          "type": "uint64"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint32",
-          "name": "executionDelay",
-          "type": "uint32"
-        }
-      ],
-      "name": "grantRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "hasRole",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "isMember",
-          "type": "bool"
-        },
-        {
-          "internalType": "uint32",
-          "name": "executionDelay",
-          "type": "uint32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        }
-      ],
-      "name": "hashOperation",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "admin",
-          "type": "address"
+          "internalType": "string",
+          "name": "symbol_",
+          "type": "string"
         }
       ],
       "name": "initialize",
@@ -1049,14 +293,8 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        }
-      ],
-      "name": "isTargetClosed",
+      "inputs": [],
+      "name": "initialized",
       "outputs": [
         {
           "internalType": "bool",
@@ -1070,29 +308,98 @@
     {
       "inputs": [
         {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
         },
         {
-          "internalType": "string",
-          "name": "label",
-          "type": "string"
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
         }
       ],
-      "name": "labelRole",
+      "name": "isApprovedForAll",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "issueDegree",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tos",
+          "type": "address[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "uris",
+          "type": "string[]"
+        }
+      ],
+      "name": "issueDegreeList",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tos",
+          "type": "address[]"
+        }
+      ],
+      "name": "issueDegrees",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "issuedDegrees",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "minSetback",
+      "name": "name",
       "outputs": [
         {
-          "internalType": "uint32",
+          "internalType": "string",
           "name": "",
-          "type": "uint32"
+          "type": "string"
         }
       ],
       "stateMutability": "view",
@@ -1101,219 +408,87 @@
     {
       "inputs": [
         {
-          "internalType": "bytes[]",
-          "name": "data",
-          "type": "bytes[]"
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "multicall",
+      "name": "ownerOf",
       "outputs": [
         {
-          "internalType": "bytes[]",
-          "name": "results",
-          "type": "bytes[]"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
           "internalType": "address",
-          "name": "callerConfirmation",
+          "name": "",
           "type": "address"
         }
       ],
-      "name": "renounceRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "revokeRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "address",
-          "name": "target",
+          "name": "",
           "type": "address"
         },
         {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
-        },
-        {
-          "internalType": "uint48",
-          "name": "when",
-          "type": "uint48"
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
-      "name": "schedule",
+      "name": "personToDegree",
       "outputs": [
         {
-          "internalType": "bytes32",
-          "name": "operationId",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "uint32",
-          "name": "nonce",
-          "type": "uint32"
+          "internalType": "string",
+          "name": "",
+          "type": "string"
         }
       ],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint32",
-          "name": "newDelay",
-          "type": "uint32"
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
         }
       ],
-      "name": "setGrantDelay",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
+      "name": "tokenURI",
+      "outputs": [
         {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "admin",
-          "type": "uint64"
+          "internalType": "string",
+          "name": "",
+          "type": "string"
         }
       ],
-      "name": "setRoleAdmin",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        },
-        {
-          "internalType": "uint64",
-          "name": "guardian",
-          "type": "uint64"
-        }
-      ],
-      "name": "setRoleGuardian",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "uint32",
-          "name": "newDelay",
-          "type": "uint32"
-        }
-      ],
-      "name": "setTargetAdminDelay",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "closed",
-          "type": "bool"
-        }
-      ],
-      "name": "setTargetClosed",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "bytes4[]",
-          "name": "selectors",
-          "type": "bytes4[]"
-        },
-        {
-          "internalType": "uint64",
-          "name": "roleId",
-          "type": "uint64"
-        }
-      ],
-      "name": "setTargetFunctionRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "target",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "newAuthority",
+          "name": "newOwner",
           "type": "address"
         }
       ],
-      "name": "updateAuthority",
+      "name": "transferContractOwnership",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -1340,81 +515,55 @@
       "type": "constructor"
     }
   ],
-  "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
+  "transactionHash": "0xdfff9cf79cd807999b180b4d77258f6e578acf276d6eaf801dfbb8b28b48a4eb",
   "receipt": {
     "to": null,
-    "from": "0x653985cBA14eF0b751bf209fee39De78b4d21676",
-    "contractAddress": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
-    "transactionIndex": 3,
-    "gasUsed": "703597",
-    "logsBloom": "0x00000000000000000080000000000000000000000000000000800000000000002000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000008000000000000020000000000000000000800000000000000000000004000000000400000000000000000000800000000000088000000000080000000000000000000000000000000000000002000000200010000000000000008000000000000000000000000000000000000000000000000000000000004000000000800000020000000000000000000800400000000000000000000000000000000000000000200",
-    "blockHash": "0x4f3ad296fe5d85204a06e5603bf9f90318f4eaf825b37a10bb295957938c6884",
-    "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
+    "from": "0x7A3Dde3b9c3EDC68dc59d9D86393A63ABC298ccb",
+    "contractAddress": "0xC1768f7edcb78E8a25C89e826873321Cc2627C6D",
+    "transactionIndex": 8,
+    "gasUsed": "898767",
+    "logsBloom": "0x00000000000000000000000000000000000000004000000100800000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000201000000004000400000000000000000000000020000000000000000000800000000000000000000000000000000401000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000200000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000400000000000000000000000000000000000080000000",
+    "blockHash": "0x7635f062c7fe59157e9a77af83c5ba603b05db793d19cd4763ef991b4f863f49",
+    "transactionHash": "0xdfff9cf79cd807999b180b4d77258f6e578acf276d6eaf801dfbb8b28b48a4eb",
     "logs": [
       {
-        "transactionIndex": 3,
-        "blockNumber": 8710538,
-        "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
-        "address": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
+        "transactionIndex": 8,
+        "blockNumber": 209384010,
+        "transactionHash": "0xdfff9cf79cd807999b180b4d77258f6e578acf276d6eaf801dfbb8b28b48a4eb",
+        "address": "0xC1768f7edcb78E8a25C89e826873321Cc2627C6D",
         "topics": [
           "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
           "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x000000000000000000000000653985cba14ef0b751bf209fee39de78b4d21676"
+          "0x0000000000000000000000007a3dde3b9c3edc68dc59d9d86393a63abc298ccb"
         ],
         "data": "0x",
-        "logIndex": 1,
-        "blockHash": "0x4f3ad296fe5d85204a06e5603bf9f90318f4eaf825b37a10bb295957938c6884"
+        "logIndex": 33,
+        "blockHash": "0x7635f062c7fe59157e9a77af83c5ba603b05db793d19cd4763ef991b4f863f49"
       },
       {
-        "transactionIndex": 3,
-        "blockNumber": 8710538,
-        "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
-        "address": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
+        "transactionIndex": 8,
+        "blockNumber": 209384010,
+        "transactionHash": "0xdfff9cf79cd807999b180b4d77258f6e578acf276d6eaf801dfbb8b28b48a4eb",
+        "address": "0xC1768f7edcb78E8a25C89e826873321Cc2627C6D",
         "topics": [
           "0x5570d70a002632a7b0b3c9304cc89efb62d8da9eca0dbd7752c83b7379068296",
           "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x0000000000000000000000005d61ce920966c0134e4c3e32f680a5155b2364a3"
+          "0x0000000000000000000000005aa6d8330a5891898214639b586edef32a8cb550"
         ],
         "data": "0x",
-        "logIndex": 2,
-        "blockHash": "0x4f3ad296fe5d85204a06e5603bf9f90318f4eaf825b37a10bb295957938c6884"
-      },
-      {
-        "transactionIndex": 3,
-        "blockNumber": 8710538,
-        "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
-        "address": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
-        "topics": [
-          "0xf98448b987f1428e0e230e1f3c6e2ce15b5693eaf31827fbd0b1ec4b424ae7cf",
-          "0x0000000000000000000000000000000000000000000000000000000000000000",
-          "0x000000000000000000000000653985cba14ef0b751bf209fee39de78b4d21676"
-        ],
-        "data": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000661d31f40000000000000000000000000000000000000000000000000000000000000001",
-        "logIndex": 3,
-        "blockHash": "0x4f3ad296fe5d85204a06e5603bf9f90318f4eaf825b37a10bb295957938c6884"
-      },
-      {
-        "transactionIndex": 3,
-        "blockNumber": 8710538,
-        "transactionHash": "0x64ce1ba82270902027733181904627758a1800f89c39114c12a4f3f814604263",
-        "address": "0x3F266d3D3322d9C893a7B60a5Ac19d6e3C66EAD3",
-        "topics": [
-          "0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2"
-        ],
-        "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
-        "logIndex": 4,
-        "blockHash": "0x4f3ad296fe5d85204a06e5603bf9f90318f4eaf825b37a10bb295957938c6884"
+        "logIndex": 34,
+        "blockHash": "0x7635f062c7fe59157e9a77af83c5ba603b05db793d19cd4763ef991b4f863f49"
       }
     ],
-    "blockNumber": 8710538,
-    "cumulativeGasUsed": "938149",
+    "blockNumber": 209384010,
+    "cumulativeGasUsed": "2495066",
     "status": 1,
     "byzantium": true
   },
   "args": [
-    "0x5d61cE920966c0134E4c3E32F680A5155b2364A3",
-    "0x653985cBA14eF0b751bf209fee39De78b4d21676",
-    "0xc4d66de8000000000000000000000000653985cba14ef0b751bf209fee39de78b4d21676"
+    "0x5aA6D8330A5891898214639B586edeF32A8CB550",
+    "0x7A3Dde3b9c3EDC68dc59d9D86393A63ABC298ccb",
+    "0x4cd88b76000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000007426c6578534254000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007426c657853425400000000000000000000000000000000000000000000000000"
   ],
   "numDeployments": 1,
   "solcInputHash": "4a46ee6c1a29be400c9fab1ecc28e172",
@@ -1424,10 +573,11 @@
   "execute": {
     "methodName": "initialize",
     "args": [
-      "0x653985cBA14eF0b751bf209fee39De78b4d21676"
+      "BlexSBT",
+      "BlexSBT"
     ]
   },
-  "implementation": "0x5d61cE920966c0134E4c3E32F680A5155b2364A3",
+  "implementation": "0x5aA6D8330A5891898214639B586edeF32A8CB550",
   "devdoc": {
     "kind": "dev",
     "methods": {},
