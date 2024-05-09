@@ -11,7 +11,7 @@ import "hardhat-deploy";
 import "hardhat-deploy-ethers";
 import "hardhat-deploy-tenderly";
 
-import { node_url, accounts, addForkConfiguration } from "./utils/network";
+import { node_url,accounts,addForkConfiguration } from "./utils/network";
 
 const config: HardhatUserConfig = {
   typechain: {
@@ -75,6 +75,16 @@ const config: HardhatUserConfig = {
         }
       }
     },
+    arbitrum_one: {
+      url: node_url("arbitrum_one"),
+      accounts: [process.env.PRIVATE_KEY as string],
+      verify: {
+        etherscan: {
+          apiUrl: "https://api.arbiscan.io/api",
+          apiKey: process.env.ARBISCAN_API_KEY_BASE,
+        }
+      }
+    },
     staging: {
       url: node_url("rinkeby"),
       accounts: accounts("rinkeby")
@@ -115,13 +125,13 @@ const config: HardhatUserConfig = {
   },
   external: process.env.HARDHAT_FORK
     ? {
-        deployments: {
-          // process.env.HARDHAT_FORK will specify the network that the fork is made from.
-          // these lines allow it to fetch the deployments from the network being forked from both for node and deploy task
-          hardhat: ["deployments/" + process.env.HARDHAT_FORK],
-          localhost: ["deployments/" + process.env.HARDHAT_FORK]
-        }
+      deployments: {
+        // process.env.HARDHAT_FORK will specify the network that the fork is made from.
+        // these lines allow it to fetch the deployments from the network being forked from both for node and deploy task
+        hardhat: ["deployments/" + process.env.HARDHAT_FORK],
+        localhost: ["deployments/" + process.env.HARDHAT_FORK]
       }
+    }
     : undefined,
 
   tenderly: {

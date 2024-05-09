@@ -1136,7 +1136,7 @@ contract BlexSBT is ERC721URIStorage {
     Counters.Counter private _tokenIds;
     bool public initialized = false;
 
-    mapping(address => string) public personToDegree;
+    mapping(address => string[]) public personToDegree;
     mapping(address => bool) public issuedDegrees;
 
     modifier onlyContractOwner() {
@@ -1174,14 +1174,14 @@ contract BlexSBT is ERC721URIStorage {
         _mint(account, newItemId);
         _setTokenURI(newItemId, __tokenURI);
 
-        personToDegree[account] = __tokenURI;
+        personToDegree[account].push(__tokenURI);
         issuedDegrees[account] = false;
         return newItemId;
     }
 
     function checkDegreeOfPerson(
         address person
-    ) external view returns (string memory) {
+    ) external view returns (string[] memory) {
         return personToDegree[person];
     }
 
